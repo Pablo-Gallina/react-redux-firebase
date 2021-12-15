@@ -1,9 +1,14 @@
 import React from 'react';
+import { Provider } from 'react-redux';
+import { store } from './redux/store/store';
 import AuthRouter from './routers/AuthRouter';
 
 function App() {
   return (
-    <AuthRouter />
+    // Como un context
+    <Provider store={store}>
+      <AuthRouter />
+    </Provider>
   );
 }
 
