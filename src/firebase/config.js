@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import firebase from "firebase/compat/app";
 // Base de datos
-import 'firebase/compat/firestore/lite';
+import 'firebase/compat/firestore';
 // autenticaciones 
 import 'firebase/compat/auth';
 

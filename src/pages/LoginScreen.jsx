@@ -6,14 +6,15 @@ import GoogleButton from 'react-google-button'
 import { Link } from 'react-router-dom'
 
 // Actions
-import { googleLogin } from '../redux/actions/auth'
+import { googleLogin, googleLoginPop } from '../redux/actions/auth'
 
 const LoginScreen = () => {
     // el hook debe de ser de react-redux
     const dispatch = useDispatch();
 
     const handleGoogleLogin = () => {
-        dispatch(googleLogin("45adf87G", "Pablo"))
+        
+        dispatch(googleLoginPop())
     }
     return (
         <>
