@@ -7,6 +7,7 @@ import RegisterScreen from "../pages/RegisterScreen"
 
 import { firebase } from '../firebase/config.js';
 import { googleLogin } from "../redux/actions/auth";
+import AppRouter from "./AppRouter";
 
 const AuthRouter = () => {
     // ejecutar un dispatch en caso de que haya una sesion iniciada
@@ -24,6 +25,8 @@ const AuthRouter = () => {
             <Switch>
                 <Route exact path="/login" component={LoginScreen} />
                 <Route exact path="/register" component={RegisterScreen} />
+
+                <AppRouter />
             </Switch>
         </Router>
     )
