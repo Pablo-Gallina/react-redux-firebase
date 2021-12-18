@@ -17,7 +17,9 @@ const AuthRouter = () => {
     useEffect(() => {
         // notificara si el estado de la autenticacion cambio
         firebase.auth().onAuthStateChanged( user=>{
-            dispatch(googleLogin( user.uid, user.displayName ))
+            if (user) {
+                dispatch(googleLogin( user.uid, user.displayName ))
+            }
         })
     }, [])
     return (

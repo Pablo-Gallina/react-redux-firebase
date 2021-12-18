@@ -1,10 +1,17 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { logOut } from '../redux/actions/auth';
 
 const AppScreen = () => {
+    const dispatch = useDispatch();
+
+    const handleLogOut = () => {
+        dispatch(logOut())
+    }
     return (
         <>
             <h1>App screen</h1>
-            <button>LogOut</button>
+            <button onClick={handleLogOut}>LogOut</button>
         </>
     )
 }

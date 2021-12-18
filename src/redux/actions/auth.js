@@ -50,3 +50,16 @@ export const googleLogin = (uid, displayName) => {
         payload:{uid, displayName}
     }
 }
+
+
+//logout
+export const logOut = () => {
+    return async (dispatch) => {
+        // Cerrar sesion
+        await firebase.auth().signOut();
+
+        dispatch({ 
+            type: types.logout
+        })
+    }
+}
