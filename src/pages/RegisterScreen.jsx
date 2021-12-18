@@ -1,8 +1,12 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { registerUser } from '../redux/actions/auth'
 
 const RegisterScreen = () => {
-    
+    // dispatch para registrar un usuario
+    const dispatch = useDispatch()
+
     const [data, setData] = useState({
         email: "",
         username: "",
@@ -13,16 +17,18 @@ const RegisterScreen = () => {
     const { email, username, password, password2 } = data;
 
     const handleChange = e => {
-        const value = e.target.value
-        console.log(value);
+        const value = e.target.value;
+        
         setData({
             ...data,
             [e.target.name]:value
         })
     }
-
     const handleSubmit = e => {
         e.preventDefault();
+
+        // disparar la accion registerUser que se encarga de regsitrar un usuario
+        dispatch(registerUser(email, password, username))
     }
     return (
         <>
