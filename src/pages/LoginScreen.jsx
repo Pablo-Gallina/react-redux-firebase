@@ -39,13 +39,15 @@ const LoginScreen = () => {
     }
     return (
         <>
-            <h1>Login</h1>
+            <h1 className="txt-center">¡Hola Otra vez!</h1>
+            <p className="txt-center txt-content">Entra para ver los resultados de tu equipo</p>
             <form onSubmit={handleLogin}>
                 <input onChange={handleChange} name="email" value={email} type="text" placeholder='user'/>
                 <input onChange={handleChange} name="password" value={password} type="password" />
                 <button type="submit">Login</button>
             </form>   
             <GoogleButton onClick={handleGoogleLogin} />
+            <button className='btn btn-google' onClick={handleGoogleLogin}>Entrar con Google</button>
             <Link to="/register">Registrarse</Link>
 
         </>

@@ -1,0 +1,23 @@
+.btn{
+    background-color: $white;
+    color: $background;
+    border: none;
+    padding: 10px;
+    &:hover{
+        cursor: pointer;
+    }
+    &.btn-primary{
+        background-color: $primary;
+        color: $background;
+        &:hover{
+            background-color: darken($color: $primary, $amount: 10);
+        }
+    }
+    &.btn-google{
+        background-color: $googleColor;
+        color: $white;
+        &:hover{
+            background-color: darken($color: $googleColor, $amount: 10);
+        }
+    }
+}
