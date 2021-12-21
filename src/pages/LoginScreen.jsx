@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux'
 
 import { Link } from 'react-router-dom'
 import Button from '../components/Button/Button'
+import InputIcon from '../components/InputIcon/InputIcon'
 
 // Actions
 import { googleLoginPop, loginEmailPass } from '../redux/actions/auth'
@@ -48,19 +49,9 @@ const LoginScreen = () => {
                 <span className="small">ó entra con tu correo</span>
 
                 <form onSubmit={handleLogin}>
-                    <label htmlFor="email">Dirección de correo</label>
-                    <div className="input-icon mb-2">
-                        <input onChange={handleChange} id="email" name="email" value={email} type="email" placeholder='Ingresa tu Correo'/>
-                        <i className="fas fa-envelope"></i>
-                    </div>
+                    <InputIcon id="email" textoLabel="Dirección de correo" contClases="input-icon mb-2" inputClases="" placeholder="Ingresa tu Correo" icono="fas fa-envelope" onChange={handleChange} type="email" value={email} />
 
-                    <label htmlFor="password">Contraseña</label>
-                    <div className="input-icon mb-2">
-                        <input onChange={handleChange} id="password" name="password" value={password} placeholder='Ingresa tu Contraseña' type="password" />
-                        <i className="fas fa-lock"></i>
-                        <span className="fas fa-eye pass"></span>
-                        <span className="fas fa-eye-slash pass hidden"></span>
-                    </div>
+                    <InputIcon id="password" textoLabel="Contraseña" contClases="input-icon mb-2" inputClases="" placeholder="Ingresa tu Contraseña" icono="fas fa-lock" onChange={handleChange} type="password" value={password} typPass={true}/>
 
                     <Button type="submit" clases="btn btn-primary mt-2 mb-4" texto="Entrar" />
                 </form>

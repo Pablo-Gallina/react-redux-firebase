@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import Button from '../components/Button/Button'
+import InputIcon from '../components/InputIcon/InputIcon'
 import { registerUser } from '../redux/actions/auth'
 
 const RegisterScreen = () => {
@@ -44,34 +45,14 @@ const RegisterScreen = () => {
                 <span className="small">ó registrate con tu correo electrónico</span>
 
                 <form onSubmit={handleSubmit}>
-                    <label htmlFor="email">Escribe tu correo</label>
-                    <div className="input-icon">
-                        <input className="large mb-2" onChange={handleChange} id='email' value={email} name="email" type="text" placeholder='Ingresa tu Correo'/>
-                        <i className="fas fa-envelope"></i>
-                    </div>
+                    <InputIcon id="email" textoLabel="Escribe tu correo" contClases="input-icon" inputClases="large mb-2" placeholder="Ingresa tu Correo" icono="fas fa-envelope" onChange={handleChange} type="email" value={email}/>
 
-                    <label htmlFor="username">¿Cómo te llamas?</label>
-                    <div className="input-icon">
-                        <input className="large mb-2" onChange={handleChange} id="username" value={username} name="username" type="text" placeholder='Ingresa tu nombre completo'/>
-                        <i className="fas fa-user"></i>
-                    </div>
+                    <InputIcon id="username" textoLabel="¿Cómo te llamas?" contClases="input-icon" inputClases="large mb-2" placeholder="Ingresa tu nombre completo" icono="fas fa-user" onChange={handleChange} type="text" value={username}/>
 
-                    <label htmlFor="password">Crea una contraseña</label>
-                    <div className="input-icon">
-                        <input className="large mb-2" onChange={handleChange} value={password} id="password" name="password" type="password" placeholder="Ingresa tu Contraseña"/>
-                        <i className="fas fa-lock"></i>
-                        <span className="fas fa-eye pass"></span>
-                        <span className="fas fa-eye-slash pass hidden"></span>
-                    </div>
+                    <InputIcon id="password" textoLabel="Crea una contraseña" contClases="input-icon" inputClases="large mb-2" placeholder="Ingresa tu Contraseña" icono="fas fa-lock" onChange={handleChange} type="password" value={password} typPass={true}/>
+
+                    <InputIcon id="password2" textoLabel="Confirma tu contraseña" contClases="input-icon" inputClases="large mb-2" placeholder="Repite tu Contraseña" icono="fas fa-lock" onChange={handleChange} type="password" value={password2} typPass={true}/>
                     
-                    <label htmlFor="password2">Confirma tu contraseña</label>
-                    <div className="input-icon">
-                        <input className="large mb-2" onChange={handleChange} value={password2} id='password2' name="password2" type="password" placeholder="Repite tu Contraseña"/>
-                        <i className="fas fa-lock"></i>
-                        <span className="fas fa-eye pass"></span>
-                        <span className="fas fa-eye-slash pass hidden"></span>
-                    </div>
-
                     <span className="small">Al registrarte aceptas los <strong>términos y condiciones</strong> </span> <br />
                     <Button type="submit" clases="btn btn-primary large mt-2 mb-2" texto="Crear mi cuenta" />
                 </form>
