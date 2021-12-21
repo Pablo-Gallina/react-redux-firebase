@@ -45,6 +45,9 @@ const LoginScreen = () => {
                     <i className="fab fa-google"></i>
                     Entrar con Google
                 </button>
+                
+                <p className="txt-content small mt-2">ó entra con tu correo</p>
+
                 <form onSubmit={handleLogin}>
                     <div className="input-icon">
                         <input onChange={handleChange} name="email" value={email} type="email" placeholder='Ingresa tu Correo'/>
@@ -58,7 +61,10 @@ const LoginScreen = () => {
                     </div>
                     <button className='btn btn-primary mt-2' type="submit">Entrar</button>
                 </form>
-                <Link to="/register">Registrarse</Link>
+                <p className="txt-content">
+                ¿Aún no tienes cuenta en FutbolHoy?
+                </p>
+                <Link className="link -mt-3" to="/register"> Registrate gratis</Link>
             </div>
 
         </>
