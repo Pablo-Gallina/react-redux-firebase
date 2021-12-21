@@ -13,7 +13,6 @@ const LoginScreen = () => {
     const dispatch = useDispatch();
 
     const handleGoogleLogin = () => {
-        
         dispatch(googleLoginPop())
     }
 
