@@ -18,6 +18,12 @@ h1{
     font-weight: 500;
 }
 
+h2{
+    color: $white;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
 p{
     font-size: 1.1rem;
     &.txt-content{
@@ -31,5 +37,11 @@ p{
 }
 
 .small{
+    color: $whiteSecondary;
     font-size: .9rem;
+
+    strong{
+        color: $white;
+        cursor: pointer;
+    }
 }

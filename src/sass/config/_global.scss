@@ -16,6 +16,7 @@ body{
 
 .container-login{
     display: flex;
+    min-height: 100vh;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -25,6 +26,18 @@ body{
 .mt-2{
     margin-top: 10px;
 }
+.mt-5{
+    margin-top: 40px
+}
+
+.mb-2{
+    margin-bottom: 10px;
+}
+
+.mb-4{
+    margin-bottom: 40px;
+}
+
 .-mt-3{
     margin-top: -25px;
 }
@@ -35,7 +48,17 @@ body{
 
 .link{
     text-decoration: none;
-    font-size: 1.05rem;
     font-weight: 500;
     color: $white;
+}
+
+.large{
+    width: 350px
+}
+
+.have-account{
+    p{
+        display: inline;
+        margin-right: 5px;
+    }
 }

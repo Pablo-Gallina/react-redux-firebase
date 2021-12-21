@@ -38,33 +38,37 @@ const LoginScreen = () => {
     return (
         <>
 
+            <div className="container-login -mt-3">
                 <h1 className="txt-center">¡Hola Otra vez!</h1>
                 <p className="txt-center txt-content">Entra para ver los resultados de tu equipo</p>
-            <div className="container-login">
-                <button className='btn btn-google' onClick={handleGoogleLogin}>
+                
+                <button className='btn btn-google mt-5' onClick={handleGoogleLogin}>
                     <i className="fab fa-google"></i>
                     Entrar con Google
                 </button>
                 
-                <p className="txt-content small mt-2">ó entra con tu correo</p>
+                <span className="small">ó entra con tu correo</span>
 
                 <form onSubmit={handleLogin}>
-                    <div className="input-icon">
-                        <input onChange={handleChange} name="email" value={email} type="email" placeholder='Ingresa tu Correo'/>
+                    <label htmlFor="email">Dirección de correo</label>
+                    <div className="input-icon mb-2">
+                        <input onChange={handleChange} id="email" name="email" value={email} type="email" placeholder='Ingresa tu Correo'/>
                         <i className="fas fa-envelope"></i>
                     </div>
-                    <div className="input-icon">
-                        <input onChange={handleChange} name="password" className="mt-2" value={password} placeholder='Ingresa tu Contraseña' type="password" />
+
+                    <label htmlFor="password">Contraseña</label>
+                    <div className="input-icon mb-2">
+                        <input onChange={handleChange} id="password" name="password" value={password} placeholder='Ingresa tu Contraseña' type="password" />
                         <i className="fas fa-lock"></i>
                         <span className="fas fa-eye pass"></span>
                         <span className="fas fa-eye-slash pass hidden"></span>
                     </div>
-                    <button className='btn btn-primary mt-2' type="submit">Entrar</button>
+                    <button className='btn btn-primary mt-2 mb-4' type="submit">Entrar</button>
                 </form>
-                <p className="txt-content">
+                <p className="txt-content small">
                 ¿Aún no tienes cuenta en FutbolHoy?
                 </p>
-                <Link className="link -mt-3" to="/register"> Registrate gratis</Link>
+                <Link className="link -mt-3 small" to="/register"> Registrate gratis</Link>
             </div>
 
         </>
