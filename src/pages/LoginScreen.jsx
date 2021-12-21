@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 
-import GoogleButton from 'react-google-button'
-
 import { Link } from 'react-router-dom'
 
 // Actions
@@ -39,16 +37,29 @@ const LoginScreen = () => {
     }
     return (
         <>
-            <h1 className="txt-center">¡Hola Otra vez!</h1>
-            <p className="txt-center txt-content">Entra para ver los resultados de tu equipo</p>
-            <form onSubmit={handleLogin}>
-                <input onChange={handleChange} name="email" value={email} type="text" placeholder='user'/>
-                <input onChange={handleChange} name="password" value={password} type="password" />
-                <button type="submit">Login</button>
-            </form>   
-            <GoogleButton onClick={handleGoogleLogin} />
-            <button className='btn btn-google' onClick={handleGoogleLogin}>Entrar con Google</button>
-            <Link to="/register">Registrarse</Link>
+
+                <h1 className="txt-center">¡Hola Otra vez!</h1>
+                <p className="txt-center txt-content">Entra para ver los resultados de tu equipo</p>
+            <div className="container-login">
+                <button className='btn btn-google' onClick={handleGoogleLogin}>
+                    <i className="fab fa-google"></i>
+                    Entrar con Google
+                </button>
+                <form onSubmit={handleLogin}>
+                    <div className="input-icon">
+                        <input onChange={handleChange} name="email" value={email} type="email" placeholder='Ingresa tu Correo'/>
+                        <i className="fas fa-envelope"></i>
+                    </div>
+                    <div className="input-icon">
+                        <input onChange={handleChange} name="password" className="mt-2" value={password} placeholder='Ingresa tu Contraseña' type="password" />
+                        <i className="fas fa-lock"></i>
+                        <span className="fas fa-eye pass"></span>
+                        <span className="fas fa-eye-slash pass hidden"></span>
+                    </div>
+                    <button className='btn btn-primary mt-2' type="submit">Entrar</button>
+                </form>
+                <Link to="/register">Registrarse</Link>
+            </div>
 
         </>
     )

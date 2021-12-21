@@ -4,7 +4,29 @@
 @import "../extra/link";
 
 @import "../components/buttons";
+@import "../components/inputs";
+
+*{
+    box-sizing: border-box;
+}
 
 body{
     background-color: $background;
+}
+
+.container-login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: $txtSecondary;
+}
+
+.mt-2{
+    margin-top: 10px;
+}
+
+.hidden{
+    display: none;
 }

@@ -1,0 +1,45 @@
+input[type=text],
+input[type=email],
+input[type=password]{
+    background-color: $backgroundMid;
+    width: 300px;
+    height: 40px;
+    border-style: none;
+    display: block;
+    border-radius: 5px;
+    padding-left: 45px;
+    padding-right: 20px;
+    font-size: 1rem;
+    color: $white;
+    &:focus{
+        background-color: darken($color: $backgroundMid, $amount: 5)
+    }
+    &::placeholder{
+        color: $txtSecondary;
+    }
+}
+
+input[type=password]{
+    padding-right: 45px;
+}
+
+.input-icon{
+    position: relative;
+
+    i,
+    span{ 
+        top: 50%;
+        transform: translate(0, -50%);
+        position:absolute;
+    }
+    i{
+        left: 15px;
+    }
+    span{
+        right: 15px;
+        &:hover{
+            cursor: pointer;
+            color: $white
+        }
+    }
+}
