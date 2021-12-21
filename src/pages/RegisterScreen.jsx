@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
+import Button from '../components/Button/Button'
 import { registerUser } from '../redux/actions/auth'
 
 const RegisterScreen = () => {
@@ -37,10 +38,8 @@ const RegisterScreen = () => {
                     Únete ahora y no te pierdas más de los últimos <br />
                     resultados de tu equipo favorito de futbol
                 </h2>  
-                <button className='btn btn-google large mt-2' onClick={()=>{}}>
-                        <i className="fab fa-google"></i>
-                        Entrar con Google
-                </button>
+
+                <Button clases='btn btn-google large mt-2' icono="fab fa-google" texto="Registrarte con Google" onClick={()=>{}}/>
 
                 <span className="small">ó registrate con tu correo electrónico</span>
 
@@ -74,7 +73,7 @@ const RegisterScreen = () => {
                     </div>
 
                     <span className="small">Al registrarte aceptas los <strong>términos y condiciones</strong> </span> <br />
-                    <button className="btn btn-primary large mt-2 mb-2" type="submit">Crear mi cuenta</button>
+                    <Button type="submit" clases="btn btn-primary large mt-2 mb-2" texto="Crear mi cuenta" />
                 </form>
 
                 <div className="have-account">

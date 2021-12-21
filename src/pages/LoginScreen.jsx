@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 
 import { Link } from 'react-router-dom'
+import Button from '../components/Button/Button'
 
 // Actions
 import { googleLoginPop, loginEmailPass } from '../redux/actions/auth'
@@ -42,11 +43,8 @@ const LoginScreen = () => {
                 <h1 className="txt-center">¡Hola Otra vez!</h1>
                 <p className="txt-center txt-content">Entra para ver los resultados de tu equipo</p>
                 
-                <button className='btn btn-google mt-5' onClick={handleGoogleLogin}>
-                    <i className="fab fa-google"></i>
-                    Entrar con Google
-                </button>
-                
+                <Button clases='btn btn-google mt-5' icono="fab fa-google" texto="Entrar con Google" onClick={handleGoogleLogin}/>
+
                 <span className="small">ó entra con tu correo</span>
 
                 <form onSubmit={handleLogin}>
@@ -63,7 +61,8 @@ const LoginScreen = () => {
                         <span className="fas fa-eye pass"></span>
                         <span className="fas fa-eye-slash pass hidden"></span>
                     </div>
-                    <button className='btn btn-primary mt-2 mb-4' type="submit">Entrar</button>
+
+                    <Button type="submit" clases="btn btn-primary mt-2 mb-4" texto="Entrar" />
                 </form>
                 <p className="txt-content small">
                 ¿Aún no tienes cuenta en FutbolHoy?
