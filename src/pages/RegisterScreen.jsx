@@ -61,7 +61,7 @@ const RegisterScreen = () => {
                     <p className="txt-content small">
                         ¿Ya tienes cuenta?
                     </p>
-                    <Link className="link small" to="/login">Entrar</Link>
+                    <Link className="link small" to="/auth/login">Entrar</Link>
                 </div>
             </div>
         </>

@@ -57,7 +57,7 @@ const LoginScreen = () => {
                 <p className="txt-content small">
                 ¿Aún no tienes cuenta en FutbolHoy?
                 </p>
-                <Link className="link -mt-3 small" to="/register"> Registrate gratis</Link>
+                <Link className="link -mt-3 small" to="/auth/register"> Registrate gratis</Link>
             </div>
 
         </>

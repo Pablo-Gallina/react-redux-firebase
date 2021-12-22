@@ -1,7 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { store } from './redux/store/store';
-import AuthRouter from './routers/AuthRouter';
+import AppRouter from './routers/AppRouter';
 
 import './sass/index.scss';
 
@@ -9,7 +9,7 @@ function App() {
   return (
     // Como un context
     <Provider store={store}>
-      <AuthRouter />
+      <AppRouter />
     </Provider>
   );
 }
