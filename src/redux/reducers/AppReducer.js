@@ -1,9 +1,9 @@
-// import { types } from "../types/types";
+import { types } from "../types/types";
 
 export const appReducer = (state={}, action) => {
     switch (action.type) {
-        // case types.login:
-        //     return action.payload;
+        case types.nominaAdd:
+            return {};
 
         // case types.logout:
         //     return {}
