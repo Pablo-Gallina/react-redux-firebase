@@ -9,6 +9,7 @@ import { firebase } from '../firebase/config.js';
 import { googleLogin } from '../redux/actions/auth'
 import AuthRouter from './AuthRouter'
 import { PublicRouter } from './PublicRouter'
+import { loadData } from '../helpers/loadData'
 
 const AppRouter = () => {
     const [log, setLog] = useState(false)
@@ -22,6 +23,7 @@ const AppRouter = () => {
             if (user) {
                 dispatch(googleLogin( user.uid, user.displayName ));
                 setLog(true);
+                loadData(user.uid);
             }else{
                 setLog(false)
             }
