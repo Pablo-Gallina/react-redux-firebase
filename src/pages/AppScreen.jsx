@@ -4,13 +4,16 @@ import { logOut } from '../redux/actions/auth';
 
 import { crearRegistro } from '../redux/actions/app';
 import Form from '../components/Form/Form';
+import Table from '../components/Table/Table';
 
 const AppScreen = () => {
     const dispatch = useDispatch();
 
     // Retorna el state de redux (auth)
-    const { auth } = useSelector(state => state);
+    const { auth, app  } = useSelector(state => state);
 
+    const { nomina : data } = app;
+    
     const handleLogOut = () => {
         dispatch(logOut())
     }
@@ -23,6 +26,8 @@ const AppScreen = () => {
             <button onClick={handleLogOut}>LogOut</button>
 
             <Form />
+
+            <Table data={data} />
         </>
     )
 }

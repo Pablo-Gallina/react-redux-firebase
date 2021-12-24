@@ -1,6 +1,10 @@
 import { types } from "../types/types";
 
-export const appReducer = (state={}, action) => {
+const initialState = {
+    nomina: []
+}
+
+export const appReducer = (state= initialState, action) => {
     switch (action.type) {
         case types.nominaAdd:
             return {};
