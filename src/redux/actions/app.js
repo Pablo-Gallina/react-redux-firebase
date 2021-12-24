@@ -7,17 +7,34 @@ export const crearRegistro = (pago) => {
         const { uid } = getState().auth;
 
         const datos = {
-            fecha: new Date(),
+            fecha: new Date().toLocaleDateString(),
             pago
         }
 
         const refer = await db.collection(`${uid}/datos/nomina`).add(datos);
+
+        const id = await refer.id;
+
+        const newData = {
+            ...datos,
+            id,
+        }
+
+        dispatch(crear(newData));
+
     }
 }
 
 export const leerDatos = datos => {
     return {
         type: types.nominaRead,
+        payload: datos
+    }
+}
+
+export const crear = datos => {
+    return {
+        type: types.nominaAdd,
         payload: datos
     }
 }

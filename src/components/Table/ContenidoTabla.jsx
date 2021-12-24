@@ -1,10 +1,12 @@
 import React from 'react'
 
 const ContenidoTabla = ({ data }) => {
-    const {pago, fecha} = data
-    const date = fecha.toDate();
+    const {pago, fecha} = data;
 
-    const fechaFormato = date.toLocaleDateString() //`${date.getDay()}/${date.getMonth()}/${date.getFullYear()}`
+    const date = fecha.seconds ? fecha.toDate() : '';
+
+    const fechaFormato = fecha.seconds ? date.toLocaleDateString() : fecha;
+
     return (
         <>
            

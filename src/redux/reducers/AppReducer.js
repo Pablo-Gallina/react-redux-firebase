@@ -7,7 +7,10 @@ const initialState = {
 export const appReducer = (state= initialState, action) => {
     switch (action.type) {
         case types.nominaAdd:
-            return {};
+            return {
+                ...state,
+                nomina: [...state.nomina, action.payload]
+            };
 
         case types.nominaRead:
             return {
