@@ -1,4 +1,5 @@
 import { db } from "../../firebase/config";
+import { types } from "../types/types";
 
 export const crearRegistro = (pago) => {
     return async (dispatch, getState) => {
@@ -11,5 +12,12 @@ export const crearRegistro = (pago) => {
         }
 
         const refer = await db.collection(`${uid}/datos/nomina`).add(datos);
+    }
+}
+
+export const leerDatos = datos => {
+    return {
+        type: types.nominaRead,
+        payload: datos
     }
 }

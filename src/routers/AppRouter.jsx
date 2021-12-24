@@ -10,6 +10,7 @@ import { googleLogin } from '../redux/actions/auth'
 import AuthRouter from './AuthRouter'
 import { PublicRouter } from './PublicRouter'
 import { loadData } from '../helpers/loadData'
+import { leerDatos } from '../redux/actions/app'
 
 const AppRouter = () => {
     const [log, setLog] = useState(false)
@@ -19,12 +20,15 @@ const AppRouter = () => {
     // Use effect para verificar si hay un cambio en nuestra aplicacion
     useEffect(() => {
         // notificara si el estado de la autenticacion cambio
-        firebase.auth().onAuthStateChanged( user=>{
+        firebase.auth().onAuthStateChanged( async user=>{
             if (user) {
                 dispatch(googleLogin( user.uid, user.displayName ));
                 setLog(true);
                 // Leer los datos de este usuario
-                loadData(user.uid);
+                const nominaDatos = await loadData(user.uid);
+                
+                // Dispatch para que los datos esten en redux
+                dispatch(leerDatos(nominaDatos));
             }else{
                 setLog(false)
             }

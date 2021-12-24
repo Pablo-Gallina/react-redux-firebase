@@ -5,9 +5,12 @@ export const appReducer = (state={}, action) => {
         case types.nominaAdd:
             return {};
 
-        // case types.logout:
-        //     return {}
-    
+        case types.nominaRead:
+            return {
+                ...state,
+                nomina: action.payload
+            }
+
         default:
             return state;
     }
