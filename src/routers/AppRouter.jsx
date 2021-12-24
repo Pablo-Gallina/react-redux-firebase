@@ -23,6 +23,7 @@ const AppRouter = () => {
             if (user) {
                 dispatch(googleLogin( user.uid, user.displayName ));
                 setLog(true);
+                // Leer los datos de este usuario
                 loadData(user.uid);
             }else{
                 setLog(false)
