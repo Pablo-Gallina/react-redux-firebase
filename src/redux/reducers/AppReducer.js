@@ -25,6 +25,12 @@ export const appReducer = (state= initialState, action) => {
                     return nomina.id !== action.payload
                 })
             }
+        
+        case types.nominaClean:
+            return {
+                ...state,
+                initialState
+            }
 
         default:
             return state;

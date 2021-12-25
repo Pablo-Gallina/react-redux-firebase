@@ -57,3 +57,9 @@ export const eliminarRegistroFirebase = (id) => {
 
     }
 }
+
+export const limipiarDatos = () => {
+    return {
+        type: types.nominaClean
+    }
+}

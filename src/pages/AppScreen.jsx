@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { logOut } from '../redux/actions/auth';
 
-import { crearRegistro } from '../redux/actions/app';
+import { crearRegistro, limipiarDatos } from '../redux/actions/app';
 import Form from '../components/Form/Form';
 import Table from '../components/Table/Table';
 
@@ -16,6 +16,7 @@ const AppScreen = () => {
     
     const handleLogOut = () => {
         dispatch(logOut())
+        dispatch(limipiarDatos())
     }
 
     return (
