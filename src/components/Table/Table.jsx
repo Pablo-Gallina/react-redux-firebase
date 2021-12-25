@@ -4,11 +4,11 @@ import TBody from './TBody'
 const Table = ({ data }) => {
     return (
         <>
-            <table>
+            <table className="table table-dark table-striped">
                 <thead>
                     <tr>
-                        <th>Fecha</th>
-                        <th>Cantidad</th>
+                        <th>Fecha Pago</th>
+                        <th>Cantidad a pagar</th>
                         <th>Accion</th>
                     </tr>
                 </thead>

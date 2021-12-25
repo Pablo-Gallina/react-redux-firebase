@@ -5,6 +5,8 @@ import { logOut } from '../redux/actions/auth';
 import { crearRegistro, limipiarDatos } from '../redux/actions/app';
 import Form from '../components/Form/Form';
 import Table from '../components/Table/Table';
+import NavBar from '../components/NavBar/NavBar';
+import Modal from '../components/Modal/Modal';
 
 const AppScreen = () => {
     const dispatch = useDispatch();
@@ -21,14 +23,16 @@ const AppScreen = () => {
 
     return (
         <>
-            <h1>App screen</h1>
+            <NavBar displayName={auth.displayName} handleLogOut={handleLogOut}/>
+            <div className="container mt-5">
+                <button type="button" className="button btn-primary float-end mb-4 mt-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Agregar Calculo
+                </button>
+                
+                <Modal body={<Form />} />
 
-            <h1>Hola { auth.displayName }</h1>
-            <button onClick={handleLogOut}>LogOut</button>
-
-            <Form />
-
-            <Table data={data} />
+                <Table data={data} />
+            </div>
         </>
     )
 }

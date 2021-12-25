@@ -14,6 +14,10 @@ body{
     background-color: $background;
 }
 
+.background-dark{
+    background-color: $background;
+}
+
 .container-login{
     display: flex;
     min-height: 100vh;

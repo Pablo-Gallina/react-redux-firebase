@@ -40,11 +40,11 @@ const RegisterScreen = () => {
         <>
             <div className="container-login -mt-3">
                 <h2 className="txt-center">
-                    Únete ahora y no te pierdas más de los últimos <br />
-                    resultados de tu equipo favorito de futbol
+                    Únete ahora y realiza calculos nominales<br />
+                    con un simple clic, y manten tus datos guardados
                 </h2>  
 
-                <Button clases='btn btn-google large mt-2' icono="fab fa-google" texto="Registrarte con Google" onClick={handleRegister}/>
+                <Button clases='button btn-google large mt-2' icono="fab fa-google" texto="Registrarte con Google" onClick={handleRegister}/>
 
                 <span className="small">ó registrate con tu correo electrónico</span>
 
@@ -58,7 +58,7 @@ const RegisterScreen = () => {
                     <InputIcon id="password2" textoLabel="Confirma tu contraseña" contClases="input-icon" inputClases="large mb-2" placeholder="Repite tu Contraseña" icono="fas fa-lock" onChange={handleChange} type="password" value={password2} typPass={true}/>
                     
                     <span className="small">Al registrarte aceptas los <strong>términos y condiciones</strong> </span> <br />
-                    <Button type="submit" clases="btn btn-primary large mt-2 mb-2" texto="Crear mi cuenta" />
+                    <Button type="submit" clases="button btn-primary large mt-2 mb-2" texto="Crear mi cuenta" />
                 </form>
 
                 <div className="have-account">

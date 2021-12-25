@@ -19,8 +19,8 @@ const ContenidoTabla = ({ data }) => {
            
             <tr className="animate__animated animate__fadeInUp ">
                 <td>{fechaFormato}</td>
-                <td>{pago}</td>
-                <td> <button onClick={handelEliminar}>eliminar</button> </td>
+                <td>Q.{pago}</td>
+                <td> <button className="btn btn-outline-danger" onClick={handelEliminar}>eliminar</button> </td>
             </tr>
         </>
     )

@@ -41,9 +41,9 @@ const LoginScreen = () => {
 
             <div className="container-login -mt-3">
                 <h1 className="txt-center">¡Hola Otra vez!</h1>
-                <p className="txt-center txt-content">Entra para ver los resultados de tu equipo</p>
+                <p className="txt-center txt-content">Entra para realizar calculos nominales con un simple clic</p>
                 
-                <Button clases='btn btn-google mt-5' icono="fab fa-google" texto="Entrar con Google" onClick={handleGoogleLogin}/>
+                <Button clases='button btn-google mt-5' icono="fab fa-google" texto="Entrar con Google" onClick={handleGoogleLogin}/>
 
                 <span className="small">ó entra con tu correo</span>
 
@@ -52,10 +52,10 @@ const LoginScreen = () => {
 
                     <InputIcon id="password" textoLabel="Contraseña" contClases="input-icon mb-2" inputClases="" placeholder="Ingresa tu Contraseña" icono="fas fa-lock" onChange={handleChange} type="password" value={password} typPass={true}/>
 
-                    <Button type="submit" clases="btn btn-primary mt-2 mb-4" texto="Entrar" />
+                    <Button type="submit" clases="button btn-primary mt-2 mb-4" texto="Entrar" />
                 </form>
                 <p className="txt-content small">
-                ¿Aún no tienes cuenta en FutbolHoy?
+                ¿Aún no tienes cuenta con nosotros?
                 </p>
                 <Link className="link -mt-3 small" to="/auth/register"> Registrate gratis</Link>
             </div>
