@@ -38,3 +38,22 @@ export const crear = datos => {
         payload: datos
     }
 }
+
+export const eliminarRegistro = id => {
+    return {
+        type: types.nominaDelete,
+        payload: id
+    }
+}
+
+export const eliminarRegistroFirebase = (id) => {
+    return async (dispatch, getState) => {
+        // Capturando el uid del usuario logueado
+        const { uid } = getState().auth;
+
+        await db.doc(`${uid}/datos/nomina/${id}`).delete();
+
+        dispatch(eliminarRegistro(id))
+
+    }
+}
