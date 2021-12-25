@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import Button from '../components/Button/Button'
 import InputIcon from '../components/InputIcon/InputIcon'
-import { registerUser } from '../redux/actions/auth'
+import { googleLoginPop, registerUser } from '../redux/actions/auth'
 
 const RegisterScreen = () => {
     // dispatch para registrar un usuario
@@ -32,6 +32,10 @@ const RegisterScreen = () => {
         // disparar la accion registerUser que se encarga de regsitrar un usuario
         dispatch(registerUser(email, password, username))
     }
+
+    const handleRegister = () => {
+        dispatch(googleLoginPop())
+    }
     return (
         <>
             <div className="container-login -mt-3">
@@ -40,7 +44,7 @@ const RegisterScreen = () => {
                     resultados de tu equipo favorito de futbol
                 </h2>  
 
-                <Button clases='btn btn-google large mt-2' icono="fab fa-google" texto="Registrarte con Google" onClick={()=>{}}/>
+                <Button clases='btn btn-google large mt-2' icono="fab fa-google" texto="Registrarte con Google" onClick={handleRegister}/>
 
                 <span className="small">ó registrate con tu correo electrónico</span>
 
